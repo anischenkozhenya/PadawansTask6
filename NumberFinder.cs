@@ -9,7 +9,7 @@ namespace PadawansTask6
         {
             int newnumber;
             int n = 0;
-            if (number < 9&&number>0)
+            if (number < 9 && number > 0)
             {
                 return null;
             }
@@ -69,7 +69,14 @@ namespace PadawansTask6
                 }
 
             } while (checker == true);
-            newnumber = int.Parse(new string(num));
+            try
+            {
+                newnumber = checked(int.Parse(new string(num)));
+            }
+            catch (OverflowException ex)
+            {
+                throw new OverflowException();
+            }
             return newnumber;
         }
 
