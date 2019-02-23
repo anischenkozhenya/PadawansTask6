@@ -9,16 +9,20 @@ namespace PadawansTask6
         {
             int newnumber;
             int n = 0;
-            if (number < 9)
+            if (number < 9&&number>0)
             {
-                throw new NotImplementedException();
+                return null;
             }
+            if (number <= 0)
+                throw new ArgumentException();
+            //Метод меняет элемент с индексом a и b местами
             void swap(char[] arr, int a, int b)
             {
                 char temp = arr[a];
                 arr[a] = arr[b];
                 arr[b] = temp;
             }
+            //приводим int в string,srting в массив  
             char[] num = number.ToString().ToCharArray();
             for (int i = num.Length - 1; i >= 0; i--)
             {
